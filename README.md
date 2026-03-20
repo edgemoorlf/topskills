@@ -20,7 +20,38 @@ A collection of useful skills for Claude Code and other AI coding agents.
 
 **Why it's better:** Unlike traditional approaches that use regex and templates, this skill delegates ALL processing to Claude for superior quality results.
 
-### Quick Start
+### Usage Options
+
+#### Option A: Claude Code Skill (Recommended)
+
+For the best "vibe coding" experience, use this as a Claude Code skill:
+
+**Setup:** Add to your Claude Code settings (`~/.claude/settings.json`):
+
+```json
+{
+  "skills": {
+    "resume-adaptation": {
+      "description": "Adapts resumes to match job descriptions",
+      "triggers": ["adapt my resume", "tailor my cv", "check ats score"],
+      "system_prompt": "You are a resume adaptation assistant. When the user wants to adapt their resume, ask for their resume file and job description, then use the Read tool to read the resume, fetch the job description (URL or file), and generate: 1) ATS compatibility analysis, 2) tailored resume, 3) cover letter. Save outputs to files."
+    }
+  }
+}
+```
+
+**Then just talk to Claude naturally:**
+
+```
+User: "Adapt my resume at ./resume.pdf for this job: https://company.com/job"
+Claude: "I'll analyze your resume and create tailored materials..."
+```
+
+See [claude-code-skill.md](skills/resume-adaptation-llm/claude-code-skill.md) for full configuration.
+
+#### Option B: Command-Line Tool
+
+For automation or CI/CD:
 
 ```bash
 cd skills/resume-adaptation-llm
@@ -39,22 +70,22 @@ python resume_adapter_llm.py \
 
 ### Features
 
-- ✅ Parses PDF/DOCX/TXT resumes
-- ✅ Fetches job descriptions from URLs
 - ✅ **Claude generates tailored resume** (professional quality)
 - ✅ **Claude writes ATS analysis** (contextual, actionable)
 - ✅ **Claude creates cover letter** (compelling, customized)
+- ✅ Parses PDF/DOCX/TXT resumes
+- ✅ Fetches job descriptions from URLs
 - ✅ Only ~200 lines of Python (vs ~1200 in traditional approach)
 
-### Comparison: LLM-Native vs Python-Based
+### Comparison
 
-| Aspect | Python-Based | LLM-Native |
-|--------|-------------|------------|
-| **Code Size** | ~1200 lines | ~200 lines |
-| **Resume Quality** | Robotic, template-like | Professional, nuanced |
-| **ATS Analysis** | Algorithmic scores only | Contextual with actionable advice |
-| **Cover Letter** | Generic template | Custom-written narrative |
-| **Understanding** | Keyword matching | Semantic comprehension |
+| Aspect | Python-Based | LLM-Native CLI | Claude Code Skill |
+|--------|-------------|----------------|-------------------|
+| **Setup** | Install deps, API key | Install deps, API key | Just add to settings |
+| **Usage** | Run commands | Run commands | Natural conversation |
+| **API Costs** | Your key | Your key | Included with Claude Code |
+| **Quality** | Robotic | Professional | Professional |
+| **Best For** | Legacy/Archive | Automation/CI | Daily use |
 
 See [skills/resume-adaptation-llm/README.md](skills/resume-adaptation-llm/README.md) for full documentation.
 
@@ -112,7 +143,8 @@ topskills/
 └── skills/
     ├── resume-adaptation-llm/        # ⭐ Recommended resume tool
     │   ├── skill.json
-    │   ├── resume_adapter_llm.py
+    │   ├── claude-code-skill.md      # Claude Code skill config
+    │   ├── resume_adapter_llm.py     # CLI tool (optional)
     │   ├── requirements.txt
     │   └── README.md
     ├── pyenv-setup/                  # Python environment helper
