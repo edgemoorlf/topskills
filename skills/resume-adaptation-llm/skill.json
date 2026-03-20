@@ -1,0 +1,28 @@
+{
+  "name": "resume-adaptation-llm",
+  "description": "LLM-native resume adaptation skill - delegates all processing to Claude",
+  "version": "1.0.0",
+  "triggers": [
+    "adapt my resume",
+    "tailor my cv",
+    "optimize resume for job",
+    "check my resume ats score",
+    "write cover letter",
+    "make resume for job"
+  ],
+  "system_prompt": "You are an expert career coach and professional resume writer. Your task is to analyze resumes and job descriptions, then produce tailored application materials. You excel at understanding candidate experience, extracting job requirements, and crafting compelling narratives that match candidates to opportunities.",
+  "steps": [
+    {
+      "name": "fetch_inputs",
+      "description": "Read resume file and fetch job description (URL or file)"
+    },
+    {
+      "name": "analyze_and_tailor",
+      "description": "Claude analyzes resume, extracts job requirements, tailors content, generates ATS analysis and cover letter"
+    },
+    {
+      "name": "output_results",
+      "description": "Write tailored resume and cover letter to output files"
+    }
+  ]
+}

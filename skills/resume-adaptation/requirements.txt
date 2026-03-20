@@ -1,0 +1,13 @@
+# Core dependencies for resume adaptation skill
+python-docx>=0.8.11
+pypdf>=3.0.0
+
+# Optional but recommended
+requests>=2.28.0
+beautifulsoup4>=4.11.0
+markdown>=3.4.0
+
+# PDF conversion (platform-specific)
+# For Windows/Mac: docx2pdf>=0.1.4
+# For Linux: Use LibreOffice command line or reportlab
+reportlab>=3.6.0

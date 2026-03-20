@@ -1,0 +1,96 @@
+{
+  "name": "resume-adaptation",
+  "description": "Adapts a resume to match a specific job description with ATS scoring and cover letter generation",
+  "version": "1.1.0",
+  "author": "User",
+  "triggers": [
+    "adapt resume",
+    "tailor resume",
+    "customize resume for job",
+    "match resume to job",
+    "optimize resume for",
+    "create targeted resume",
+    "check ats score",
+    "generate cover letter"
+  ],
+  "parameters": {
+    "resume_input": {
+      "description": "Path to resume file(s) - supports multiple versions (PDF, DOCX, TXT, MD)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "required": true
+    },
+    "job_description": {
+      "description": "Job description source - can be text string, URL, or path to PDF file",
+      "type": "string",
+      "required": true
+    },
+    "requirements": {
+      "description": "Additional user requirements or preferences for the adaptation",
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "output_name": {
+      "description": "Base name for output files (without extension)",
+      "type": "string",
+      "required": false,
+      "default": "tailored_resume"
+    },
+    "output_dir": {
+      "description": "Directory for output files",
+      "type": "string",
+      "required": false,
+      "default": "./output"
+    },
+    "ats_score": {
+      "description": "Calculate ATS (Applicant Tracking System) compatibility score",
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "cover_letter": {
+      "description": "Generate a tailored cover letter",
+      "type": "boolean",
+      "required": false,
+      "default": false
+    }
+  },
+  "system_prompt": "You are a professional resume writer and career coach specializing in tailoring resumes to specific job descriptions. Your goal is to help candidates present their experience in the most relevant way for each opportunity while maintaining honesty and accuracy.",
+  "steps": [
+    {
+      "name": "parse_inputs",
+      "description": "Parse and validate all input sources"
+    },
+    {
+      "name": "extract_job_requirements",
+      "description": "Extract key requirements, skills, and qualifications from the job description"
+    },
+    {
+      "name": "analyze_resume",
+      "description": "Analyze the resume(s) to identify relevant experience and skills"
+    },
+    {
+      "name": "ats_scoring",
+      "description": "Calculate ATS compatibility score with detailed analysis"
+    },
+    {
+      "name": "map_alignment",
+      "description": "Map resume content to job requirements, identifying gaps and highlights"
+    },
+    {
+      "name": "generate_tailored_resume",
+      "description": "Generate an adapted resume highlighting relevant experience"
+    },
+    {
+      "name": "generate_cover_letter",
+      "description": "Generate a tailored cover letter matching the job requirements"
+    },
+    {
+      "name": "create_output_files",
+      "description": "Create DOCX and PDF output files for resume and cover letter"
+    }
+  ]
+}

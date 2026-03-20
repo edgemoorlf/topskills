@@ -1,0 +1,13 @@
+# Minimal dependencies - ONLY for file I/O and API calls
+# All actual processing is delegated to Claude
+
+# File parsing (text extraction only)
+python-docx>=0.8.11
+pypdf>=3.0.0
+
+# URL fetching
+requests>=2.28.0
+beautifulsoup4>=4.11.0
+
+# Claude API
+anthropic>=0.18.0

@@ -1,0 +1,26 @@
+{
+  "name": "pyenv-setup",
+  "description": "Helper for setting up Python virtual environments with uv",
+  "version": "1.0.0",
+  "triggers": [
+    "setup python venv",
+    "create virtual environment",
+    "activate venv",
+    "install packages",
+    "python environment",
+    "uv venv"
+  ],
+  "commands": {
+    "status": "python pyenv_setup.py --status",
+    "create": "python pyenv_setup.py --create",
+    "activate": "python pyenv_setup.py --activate",
+    "install": "python pyenv_setup.py --install"
+  },
+  "quick_reference": {
+    "create_venv": "uv venv",
+    "activate_unix": "source .venv/bin/activate",
+    "activate_windows": ".venv\\Scripts\\activate",
+    "install_package": "uv pip install <package>",
+    "install_requirements": "uv pip install -r requirements.txt"
+  }
+}
