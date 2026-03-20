@@ -6,9 +6,43 @@ A collection of useful skills for Claude Code and other AI coding agents.
 
 | Skill | Purpose | Status |
 |-------|---------|--------|
+| [skill-setup](#0-skill-setup-helper) | Install/manage other skills | 🛠️ **Start Here** |
 | [resume-adaptation-llm](#1-resume-adaptation-llm-recommended) | AI-powered resume tailoring | ⭐ **Recommended** |
 | [pyenv-setup](#2-python-environment-setup) | Python venv helper | Ready |
 | [resume-adaptation](#3-resume-adaptation-python-based) | Legacy Python version | Archived |
+
+---
+
+## 0. Skill Setup Helper 🛠️ START HERE
+
+**Location:** `skills/skill-setup/`
+
+**What it does:** Helps you install and manage other skills in Claude Code.
+
+### Quick Start
+
+```bash
+# See available skills
+python skills/skill-setup/install-skill.py --list
+
+# Install the resume adaptation skill
+python skills/skill-setup/install-skill.py resume-adaptation
+
+# Install all skills
+python skills/skill-setup/install-skill.py --all
+```
+
+This will automatically add the skill configuration to your `~/.claude/settings.json`.
+
+### Manual Setup (Alternative)
+
+If you prefer to set up skills manually:
+
+1. Open your Claude Code settings: `~/.claude/settings.json`
+2. Add the skill configuration from the skill's `claude-code-skill.md` file
+3. Restart Claude Code (or wait for it to reload)
+
+See [skills/skill-setup/skill-setup.md](skills/skill-setup/skill-setup.md) for full documentation.
 
 ---
 
@@ -141,6 +175,9 @@ topskills/
 ├── README.md                          # This file
 ├── SKILLS_INDEX.md                   # Detailed skill index
 └── skills/
+    ├── skill-setup/                  # 🛠️ Skill installer helper
+    │   ├── skill-setup.md
+    │   └── install-skill.py
     ├── resume-adaptation-llm/        # ⭐ Recommended resume tool
     │   ├── skill.json
     │   ├── claude-code-skill.md      # Claude Code skill config
