@@ -6,7 +6,7 @@ A collection of useful skills for Claude Code and other AI coding agents.
 
 ### 1. Resume Adaptation (LLM-Native) ⭐ RECOMMENDED
 
-**Location:** `skills/resume-adaptation-llm/`
+**Location:** `skills/adapt-my-resume/`
 
 **What it does:** Adapts resumes to match job descriptions with ATS scoring and cover letter generation.
 
@@ -14,7 +14,7 @@ A collection of useful skills for Claude Code and other AI coding agents.
 
 **Quick Start:**
 ```bash
-cd skills/resume-adaptation-llm
+cd skills/adapt-my-resume
 uv venv && source .venv/bin/activate
 uv pip install -r requirements.txt
 export ANTHROPIC_API_KEY="your-key"
@@ -99,7 +99,7 @@ topskills/
 ├── README.md                 # Project overview
 ├── SKILLS_INDEX.md          # This file
 └── skills/
-    ├── resume-adaptation-llm/   # ⭐ Recommended resume tool
+    ├── adapt-my-resume/   # ⭐ Recommended resume tool
     ├── pyenv-setup/             # Python environment helper
     └── resume-adaptation/       # Legacy Python-based tool
 ```

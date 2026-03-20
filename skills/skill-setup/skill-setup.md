@@ -26,7 +26,7 @@ Add this to your Claude Code settings (`~/.claude/settings.json`):
         "list skills",
         "remove skill"
       ],
-      "system_prompt": "You are a skill setup assistant for Claude Code. Help users install, configure, and manage skills.\n\nWhen a user wants to install a skill:\n1. Check if the skill exists in the topskills repository\n2. Read the skill's claude-code-skill.md or skill.json file\n3. Guide them to add the configuration to ~/.claude/settings.json\n4. Offer to create the settings file if it doesn't exist\n\nAvailable skills in topskills:\n- resume-adaptation: Adapts resumes to job descriptions\n- pyenv-setup: Python virtual environment helper\n\nBe helpful and provide exact configuration snippets."
+      "system_prompt": "You are a skill setup assistant for Claude Code. Help users install, configure, and manage skills.\n\nWhen a user wants to install a skill:\n1. Check if the skill exists in the topskills repository\n2. Read the skill's claude-code-skill.md or skill.json file\n3. Guide them to add the configuration to ~/.claude/settings.json\n4. Offer to create the settings file if it doesn't exist\n\nAvailable skills in topskills:\n- adapt-my-resume: Adapts resumes to job descriptions\n- pyenv-setup: Python virtual environment helper\n\nBe helpful and provide exact configuration snippets."
     }
   }
 }
@@ -67,7 +67,7 @@ If you prefer to do it manually, here's how to add any skill:
 
 ```bash
 # 1. Read the skill configuration
-cat skills/resume-adaptation-llm/claude-code-skill.md
+cat skills/adapt-my-resume/claude-code-skill.md
 
 # 2. Edit your Claude Code settings
 nano ~/.claude/settings.json
@@ -86,9 +86,9 @@ nano ~/.claude/settings.json
 
 ## Available Skills Reference
 
-### resume-adaptation-llm
+### adapt-my-resume
 **Purpose:** Adapts resumes to match job descriptions
-**File:** `skills/resume-adaptation-llm/claude-code-skill.md`
+**File:** `skills/adapt-my-resume/claude-code-skill.md`
 **Triggers:** "adapt my resume", "tailor my cv", "check ats score"
 
 ### pyenv-setup

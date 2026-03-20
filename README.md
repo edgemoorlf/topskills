@@ -7,7 +7,7 @@ A collection of useful skills for Claude Code and other AI coding agents.
 | Skill | Purpose | Status |
 |-------|---------|--------|
 | [skill-setup](#0-skill-setup-helper) | Install/manage other skills | 🛠️ **Start Here** |
-| [resume-adaptation-llm](#1-resume-adaptation-llm-recommended) | AI-powered resume tailoring | ⭐ **Recommended** |
+| [adapt-my-resume](#1-adapt-my-resume-recommended) | AI-powered resume tailoring | ⭐ **Recommended** |
 | [pyenv-setup](#2-python-environment-setup) | Python venv helper | Ready |
 | [resume-adaptation](#3-resume-adaptation-python-based) | Legacy Python version | Archived |
 
@@ -48,7 +48,7 @@ See [skills/skill-setup/skill-setup.md](skills/skill-setup/skill-setup.md) for f
 
 ## 1. Resume Adaptation (LLM-Native) ⭐ RECOMMENDED
 
-**Location:** `skills/resume-adaptation-llm/`
+**Location:** `skills/adapt-my-resume/`
 
 **What it does:** Adapts resumes to match job descriptions with ATS scoring and cover letter generation.
 
@@ -65,7 +65,7 @@ For the best "vibe coding" experience, use this as a Claude Code skill:
 ```json
 {
   "skills": {
-    "resume-adaptation": {
+    "adapt-my-resume": {
       "description": "Adapts resumes to match job descriptions",
       "triggers": ["adapt my resume", "tailor my cv", "check ats score"],
       "system_prompt": "You are a resume adaptation assistant. When the user wants to adapt their resume, ask for their resume file and job description, then use the Read tool to read the resume, fetch the job description (URL or file), and generate: 1) ATS compatibility analysis, 2) tailored resume, 3) cover letter. Save outputs to files."
@@ -81,14 +81,14 @@ User: "Adapt my resume at ./resume.pdf for this job: https://company.com/job"
 Claude: "I'll analyze your resume and create tailored materials..."
 ```
 
-See [claude-code-skill.md](skills/resume-adaptation-llm/claude-code-skill.md) for full configuration.
+See [claude-code-skill.md](skills/adapt-my-resume/claude-code-skill.md) for full configuration.
 
 #### Option B: Command-Line Tool
 
 For automation or CI/CD:
 
 ```bash
-cd skills/resume-adaptation-llm
+cd skills/adapt-my-resume
 
 # Setup
 uv venv && source .venv/bin/activate
@@ -121,7 +121,7 @@ python resume_adapter_llm.py \
 | **Quality** | Robotic | Professional | Professional |
 | **Best For** | Legacy/Archive | Automation/CI | Daily use |
 
-See [skills/resume-adaptation-llm/README.md](skills/resume-adaptation-llm/README.md) for full documentation.
+See [skills/adapt-my-resume/README.md](skills/adapt-my-resume/README.md) for full documentation.
 
 ---
 
@@ -178,7 +178,7 @@ topskills/
     ├── skill-setup/                  # 🛠️ Skill installer helper
     │   ├── skill-setup.md
     │   └── install-skill.py
-    ├── resume-adaptation-llm/        # ⭐ Recommended resume tool
+    ├── adapt-my-resume/        # ⭐ Recommended resume tool
     │   ├── skill.json
     │   ├── claude-code-skill.md      # Claude Code skill config
     │   ├── resume_adapter_llm.py     # CLI tool (optional)

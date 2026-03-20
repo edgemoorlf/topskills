@@ -5,7 +5,7 @@ Skill Installer for Claude Code
 Automatically installs skills from the topskills repository to your Claude Code settings.
 
 Usage:
-    python install-skill.py resume-adaptation
+    python install-skill.py adapt-my-resume
     python install-skill.py pyenv-setup
     python install-skill.py --list
     python install-skill.py --all
@@ -22,11 +22,11 @@ SETTINGS_PATH = Path.home() / ".claude" / "settings.json"
 
 
 AVAILABLE_SKILLS = {
-    "resume-adaptation": {
-        "name": "resume-adaptation",
+    "adapt-my-resume": {
+        "name": "adapt-my-resume",
         "description": "Adapts resumes to match job descriptions with ATS analysis and cover letter generation",
         "triggers": ["adapt my resume", "tailor my cv", "optimize resume for", "check my resume ats score", "write cover letter for"],
-        "config_path": "resume-adaptation-llm/claude-code-skill.md"
+        "config_path": "adapt-my-resume/claude-code-skill.md"
     },
     "pyenv-setup": {
         "name": "pyenv-setup",
@@ -152,7 +152,7 @@ def main():
         epilog="""
 Examples:
     # Install a specific skill
-    python install-skill.py resume-adaptation
+    python install-skill.py adapt-my-resume
 
     # List all available skills
     python install-skill.py --list
